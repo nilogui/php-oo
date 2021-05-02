@@ -1,0 +1,30 @@
+==>B Orientação a objetos, exceções e banco de dados PHP (Prof. Gustavo Fraga - https://www.linkedin.com/in/lafraga93)
+- https://web.digitalinnovation.one/browse ==> https://web.digitalinnovation.one/course/orientacao-objetos-excecoes-e-banco-de-dados-php/learning/474e7ed3-0910-405e-a05b-a74fcef198e2
+- git status / git init / git add . / git commit -m 'Orientação a Objetos com PHP'/ git branch -M main / git remote add origin https://github.com/nilogui/php-oo.git / git push origin main / git log
+- XAMP ==> Config ==> httpd.conf ==> DocumentRoot "D:/projetos/dio/php-oo" | <Directory "D:/projetos/dio/php-oo">
+- Rodar no VSCode com F5
+- echo '<br>' . 'O Saldo Atual é: ' . $conta->obterSaldo(); / echo PHP_EOL; (equivalente a echo '<br>';)
+- https://www.php-fig.org/psr/psr-12 (padronização de codificação)
+- O PDO (PHP Data Object) é uma extensão da linguagem PHP para acesso a banco de dados. Totalmente orientado a objetos ele possui diversos recursos importantes, além de suporte a diversos mecanismos de banco de dados. https://www.treinaweb.com.br/blog/o-que-e-pdo-no-php / https://www.devmedia.com.br/introducao-ao-php-pdo/24973
+- Persistir informações em BDs. SQLite é BD não-relacional. MySQL é BD relacional.
+- Subir os Servidores do ApAche e MySQL via XAMPP
+- $pdo =  new PDO('mysql:host=localhost;dbname=exemplo', 'root', ''); // user "root" without password
+     object(PDO)#1 (0) { }
+CREATE DATABASE exemplo;
+use exemplo;
+CREATE TABLE produtos (
+	id int(11) NOT NULL AUTO_INCREMENT,
+    descricao varchar(50) DEFAULT NULL,
+    PRIMARY KEY(id)
+);
+- Conexão ==> Listagem ==> Inserção ==> Edição ==> Exclusão
+--- SGDB postgress  C:\ProgramData\Microsoft\Windows\Start Menu\Programs\PostgreSQL 13\pgAdmin4 nilcris22
+password (DB superuser): nilcris21
+master password for pdAdmin4.exe: nilcris22
+digital_innovation_one postgres postgres     https://stackoverflow.com/questions/55038942/fatal-password-authentication-failed-for-user-postgres-postgresql-11-with-pg/55039419
+https://www.php.net/manual/pt_BR/ref.pdo-pgsql.connection.php
+- Refiz o exercício conectando com o BD PostgreSQL que habilitei no arquivo php.ini [extension=php_pdo_pgsql.dll]
+   $pdo =  new PDO('pgsql:host=localhost;dbname=exemplo', 'postgres', 'postgres'); // user postgres   (em connect.php
+  E tudo funcionou novamente no CRUD(Criar Listar Atualizar e Deletar) (arquivos list.php; insert.php; update.php e delete,php)
+  Rodei eles no Broser com Localhost (Servidor Apache ativado)
+==>E Orientação a objetos, exceções e banco de dados PHP (Prof. Gustavo Fraga - https://www.linkedin.com/in/lafraga93)
